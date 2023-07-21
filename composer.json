@@ -2,6 +2,9 @@
     "name": "agounane/tawssil-api-client",
     "description": "Client for interacting with Tawssil API",
     "type": "library",
+    "version": "1.0.0",
+    "homepage": "https://github.com/agounane/tawssil-api-clien",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Pandisoft\\TawssilApiClient\\": "src/"
