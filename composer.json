@@ -1,0 +1,19 @@
+{
+    "name": "agounane/tawssil-api",
+    "description": "Client for interacting with Tawssil API",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Pandisoft\\TawssilApiClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abdallah gounane"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
