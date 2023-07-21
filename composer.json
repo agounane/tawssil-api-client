@@ -1,5 +1,5 @@
 {
-    "name": "agounane/tawssil-api",
+    "name": "agounane/tawssil-api-client",
     "description": "Client for interacting with Tawssil API",
     "type": "library",
     "autoload": {
