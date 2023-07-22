@@ -2,7 +2,7 @@
     "name": "agounane/tawssil-api-client",
     "description": "Client for interacting with Tawssil API",
     "type": "library",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "minimum-stability": "stable",
     "homepage": "https://github.com/agounane/tawssil-api-clien",
     "license": "MIT",
