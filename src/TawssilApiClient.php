@@ -8,6 +8,15 @@ class TawssilApiClient
 {
     protected $client;
 
+    const ENDPOINTS = [
+        'create_package' => '/api/create_colis/',
+        'update_package' => '/api/update_colis/',
+        'tracking_package' => '/api/tracking_colis/',
+        'create_address' => '/api/create_address/',
+        'get_package_label' => '/api/get_colis_label/',
+        'get_rates' => '/api/get_rates/'
+    ];
+
     public function __construct($baseUrl, $jwtToken)
     {
         $this->client = new Client([
@@ -19,37 +28,46 @@ class TawssilApiClient
         ]);
     }
 
-    public function createColis(array $data)
+    public function createPackage(array $data)
     {
-        $response = $this->client->post('/api/create_colis/', ['json' => $data]);
-
-        return json_decode($response->getBody(), true);
+        return $this->post(self::ENDPOINTS['create_package'], $data);
     }
 
-    public function updateColis($colisId, array $data)
+    public function updatePackage($packageId, array $data)
     {
-        $response = $this->client->put("/api/update_colis/{$colisId}", ['json' => $data]);
-
-        return json_decode($response->getBody(), true);
+        return $this->post(self::ENDPOINTS['update_package'], $data);
     }
 
-    public function trackingColis($colisId)
+    public function trackingPackage($data)
     {
-        $response = $this->client->get("/api/tracking_colis/{$colisId}");
-
-        return json_decode($response->getBody(), true);
+        return $this->post(self::ENDPOINTS['tracking_package'], $data);
     }
 
     public function createAddress(array $data)
     {
-        $response = $this->client->post('/api/create_address/', ['json' => $data]);
+        return $this->post(self::ENDPOINTS['create_address'], $data);
+    }
+
+    public function getPackageLabel($data)
+    {
+        return $this->post(self::ENDPOINTS['get_package_label'], $data);
+    }
+
+    public function getRates($data)
+    {
+        return $this->post(self::ENDPOINTS['get_rates'], $data);
+    }
+
+    private function post($url, array $data)
+    {
+        $response = $this->client->post($url, ['json' => $data]);
 
         return json_decode($response->getBody(), true);
     }
 
-    public function getColisLabel($colisId)
+    private function get($url)
     {
-        $response = $this->client->get("/api/get_colis_label/{$colisId}");
+        $response = $this->client->get($url);
 
         return json_decode($response->getBody(), true);
     }
