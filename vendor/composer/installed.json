@@ -2796,10 +2796,12 @@
     ],
     "dev": true,
     "dev-package-names": [
+        "graham-campbell/result-type",
         "myclabs/deep-copy",
         "nikic/php-parser",
         "phar-io/manifest",
         "phar-io/version",
+        "phpoption/phpoption",
         "phpunit/php-code-coverage",
         "phpunit/php-file-iterator",
         "phpunit/php-invoker",
@@ -2821,6 +2823,10 @@
         "sebastian/recursion-context",
         "sebastian/type",
         "sebastian/version",
-        "theseer/tokenizer"
+        "symfony/polyfill-ctype",
+        "symfony/polyfill-mbstring",
+        "symfony/polyfill-php80",
+        "theseer/tokenizer",
+        "vlucas/phpdotenv"
     ]
 }
